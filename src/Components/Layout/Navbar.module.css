@@ -1,0 +1,26 @@
+.navbar_container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+.navbar_button {
+  padding: 10px;
+  background-color: blue;
+  cursor: pointer;
+  color: grey;
+}
+.navbar_button:hover {
+  color: white;
+}
+
+.navbar_link {
+  text-decoration: none;
+  color: grey;
+}
+
+.active {
+  color: red;
+}

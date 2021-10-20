@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  flex: 1;
+}
+.prueba {
+  flex: 1;
+}
+.button {
+  padding: 15px;
+  border: none;
+  background-color: black;
+  color: gray;
+  cursor: pointer;
+}
+.img {
+  width: 200px;
+}
+.flex {
+  flex: 1;
+}

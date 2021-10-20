@@ -1,0 +1,22 @@
+.container {
+  margin: 0 150px;
+  color: gray;
+}
+
+h3 {
+  color: rgb(167, 166, 166);
+}
+
+.img {
+  border-bottom: #944959 solid 4px;
+  width: 50%;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section p {
+  width: 40%;
+}

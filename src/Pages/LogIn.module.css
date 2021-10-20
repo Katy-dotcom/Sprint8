@@ -1,0 +1,10 @@
+.container {
+  background-color: #242424;
+  margin: 50px 150px;
+  text-align: center;
+}
+
+input {
+  border-radius: 5px;
+  padding: 10px 90px;
+}
