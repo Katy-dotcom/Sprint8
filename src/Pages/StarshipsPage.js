@@ -16,6 +16,7 @@ const StarshipsPage = () => {
     const response = await fetch(url);
     const starships = await response.json();
     starships.results.forEach((element) => {
+      //añadir nueva propiedad a los objetos - id
       element.id = getId(element.url);
     });
     console.log(starships);

@@ -4,13 +4,13 @@
 }
 
 h3 {
+  color: rgb(167, 166, 166);
   border-top: #944959 solid 4px;
   padding-top: 10px;
-  color: rgb(167, 166, 166);
 }
 
 .img {
-  width: 60%;
+  width: 50%;
   display: block;
   margin: auto;
 }

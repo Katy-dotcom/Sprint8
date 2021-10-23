@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-// import styles from "./SignUp.module.css";
+
 import { useForm } from "react-hook-form";
+import Register from "../StyledComponents/Register";
+import starwars_yellow from "../Assets/logo/starwars_yellow.png";
 
 const SignUp = () => {
   //declarar useForm
@@ -33,8 +35,9 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <Register>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <img src={starwars_yellow} alt="" />
         <h2>SIGN UP</h2>
         <div>
           <label htmlFor="email">
@@ -74,7 +77,7 @@ const SignUp = () => {
         </div>
         {error && <p>Ya existe una cuenta con ese usuario</p>}
       </form>
-    </div>
+    </Register>
   );
 };
 

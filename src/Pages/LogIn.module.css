@@ -1,10 +1,22 @@
-.container {
-  background-color: #242424;
-  margin: 50px 150px;
-  text-align: center;
+img {
+  width: 120px;
 }
 
 input {
+  padding: 10px 80px;
+  margin: 10px;
   border-radius: 5px;
-  padding: 10px 90px;
+}
+button {
+  color: white;
+  background-color: rgb(96, 95, 95);
+  padding: 10px 140px;
+}
+
+.create_account {
+  padding: 30px;
+}
+
+.link {
+  color: #eccf3c;
 }

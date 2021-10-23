@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styles from "./StarshipInfo.module.css";
 import nave from "../Assets/imgs/nave.jpg";
+import Pilots from "../Components/Pilots";
+import Films from "../Components/Films";
 
 const StarshipInfo = () => {
   //   console.log(useParams());
@@ -18,6 +20,7 @@ const StarshipInfo = () => {
     }
     loadStarship();
   }, [id]);
+  //console.log(starship.pilots[0]);
 
   return (
     <div className={styles.container}>
@@ -25,7 +28,7 @@ const StarshipInfo = () => {
         <img src={nave} alt="imagen-nave" className={styles.img} />
       </div>
       <div>
-        <h3>{starship.name}</h3>
+        <h2>{starship.name}</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem iusto
           id facere aliquam qui, consequuntur exercitationem reprehenderit sit!
@@ -39,6 +42,8 @@ const StarshipInfo = () => {
           <p>Length: {starship.length}</p>
           <p>Atmoshperic Speed: {starship.max_atmoshpering_speed}</p>
           <p>Crew: {starship.crew}</p>
+          <Pilots starshipPilotUrls={starship.pilots}></Pilots>
+          <Films starshipFilmUrls={starship.films}></Films>
         </section>
       </div>
     </div>

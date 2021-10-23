@@ -1,4 +1,3 @@
-import react from "react";
 import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 const Homepage = () => {
