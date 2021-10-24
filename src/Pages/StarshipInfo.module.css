@@ -1,0 +1,25 @@
+.container {
+  margin: 0 150px;
+  color: gray;
+}
+
+h3 {
+  border-top: #944959 solid 4px;
+  padding-top: 10px;
+  color: rgb(167, 166, 166);
+}
+
+.img {
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.section_div {
+  width: 40%;
+}

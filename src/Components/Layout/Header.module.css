@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  flex: 1;
+}
+.prueba {
+  flex: 1;
+}
+.link {
+  padding: 15px;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  margin: 0px 20px;
+}
+
+.link:hover {
+  color: white;
+}
+
+.img {
+  width: 200px;
+}
+.flex {
+  flex: 1;
+}
