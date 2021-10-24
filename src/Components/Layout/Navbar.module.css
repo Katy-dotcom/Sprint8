@@ -6,21 +6,20 @@
   border-top: 1px solid grey;
 }
 
-.navbar_button {
-  padding: 10px;
-  background-color: blue;
-  cursor: pointer;
-  color: grey;
-}
-.navbar_button:hover {
+.navbar_link:hover {
   color: white;
 }
 
 .navbar_link {
   text-decoration: none;
   color: grey;
+  padding: 10px 40px;
+  cursor: pointer;
+  margin: 0px 40px;
 }
 
 .active {
-  color: red;
+  border-bottom: 1px solid blue;
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
 }

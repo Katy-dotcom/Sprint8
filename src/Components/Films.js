@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import FilmInfo from "../Pages/FilmInfo";
 import { Link } from "react-router-dom";
 import FilmInfoCard from "./Starship/FilmInfoCard";
+import styles from "./Films.module.css";
 
 const Films = ({ starshipFilmUrls }) => {
   const [films, setFilms] = useState([]);
@@ -30,7 +30,7 @@ const Films = ({ starshipFilmUrls }) => {
   };
 
   return (
-    <p>
+    <div className={styles.section_div}>
       Films:
       {films.length > 0 ? (
         films.map((film) => (
@@ -43,7 +43,7 @@ const Films = ({ starshipFilmUrls }) => {
       ) : (
         <span>No hay peliculas. </span>
       )}
-    </p>
+    </div>
   );
 };
 

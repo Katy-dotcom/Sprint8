@@ -10,18 +10,22 @@ const Navbar = () => {
         activeClassName={styles.active}
         exact
       >
-        <button className={styles.navbar_button}>Home</button>
+        HOME
+      </NavLink>{" "}
+      <NavLink
+        to="/Starships"
+        className={styles.navbar_link}
+        activeClassName={styles.active}
+      >
+        STARSHIPS
       </NavLink>
-      <button className={styles.navbar_button}>
-        {" "}
-        <NavLink
-          to="/StarshipsPage"
-          className={styles.navbar_link}
-          activeClassName={styles.active}
-        >
-          Starships
-        </NavLink>
-      </button>
+      <NavLink
+        to="/Actors"
+        className={styles.navbar_link}
+        activeClassName={styles.active}
+      >
+        ACTORS
+      </NavLink>
     </div>
   );
 };

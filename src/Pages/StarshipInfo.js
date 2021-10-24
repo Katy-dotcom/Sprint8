@@ -6,7 +6,6 @@ import Pilots from "../Components/Pilots";
 import Films from "../Components/Films";
 
 const StarshipInfo = () => {
-  //   console.log(useParams());
   const { id } = useParams();
 
   const [starship, setStarship] = useState([]);
@@ -28,7 +27,7 @@ const StarshipInfo = () => {
         <img src={nave} alt="imagen-nave" className={styles.img} />
       </div>
       <div>
-        <h2>{starship.name}</h2>
+        <h1>{starship.name}</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem iusto
           id facere aliquam qui, consequuntur exercitationem reprehenderit sit!
@@ -36,14 +35,22 @@ const StarshipInfo = () => {
           alias ea excepturi provident!
         </p>
         <section>
-          <p>Model: {starship.model}</p>
-          <p>Cost in credits: {starship.cost_in_credits}</p>
-          <p>Manufacturer: {starship.manufacturer}</p>
-          <p>Length: {starship.length}</p>
-          <p>Atmoshperic Speed: {starship.max_atmoshpering_speed}</p>
-          <p>Crew: {starship.crew}</p>
-          <Pilots starshipPilotUrls={starship.pilots}></Pilots>
-          <Films starshipFilmUrls={starship.films}></Films>
+          <div className={styles.section_div}>Model: {starship.model}</div>
+          <div className={styles.section_div}>
+            Cost in credits: {starship.cost_in_credits}
+          </div>
+          <div>Manufacturer: {starship.manufacturer}</div>
+          <div>Length: {starship.length}</div>
+          <div>Atmoshperic Speed: {starship.max_atmosphering_speed}</div>
+          <div>Crew: {starship.crew}</div>
+          <Pilots
+            className={styles.section_div}
+            starshipPilotUrls={starship.pilots}
+          ></Pilots>
+          <Films
+            className={styles.section_div}
+            starshipFilmUrls={starship.films}
+          ></Films>
         </section>
       </div>
     </div>

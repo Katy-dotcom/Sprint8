@@ -10,7 +10,7 @@ import LogIn from "./Pages/LogIn";
 import SignUp from "./Pages/SignUp";
 import PilotInfo from "./Pages/PilotInfo";
 import FilmInfo from "./Pages/FilmInfo";
-
+import ActorsPage from "./Pages/ActorsPage";
 import GuardedRoute from "./Components/GuardedRoute";
 
 function App() {
@@ -21,12 +21,13 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Homepage} />
-          <Route path="/Pilot/:id" component={PilotInfo} />
-          <Route path="/Film/:id" component={FilmInfo} />
+          <GuardedRoute path="/Actors/:id" component={PilotInfo} />
+          <GuardedRoute path="/Film/:id" component={FilmInfo} />
 
-          <Route path="/StarshipsPage/:id" component={StarshipInfo} />
+          <GuardedRoute path="/Starships/:id" component={StarshipInfo} />
 
-          <GuardedRoute path="/StarshipsPage" component={StarshipsPage} />
+          <GuardedRoute path="/Starships" component={StarshipsPage} />
+          <GuardedRoute path="/Actors" component={ActorsPage} />
 
           <Route path="/LogIn" component={LogIn} />
 

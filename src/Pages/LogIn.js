@@ -1,40 +1,39 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "./LogIn.module.css";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
 import Register from "../StyledComponents/Register";
 import starwars_yellow from "../Assets/logo/starwars_yellow.png";
 import { LoggedContext } from "../Hooks/context/LoggedContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LogIn = ({}) => {
   const { register, handleSubmit } = useForm();
-  const { logged, setLogged } = useContext(LoggedContext);
+  const { setLogged } = useContext(LoggedContext);
   let history = useHistory();
-
-  // useEffect(() => {
-  //   console.log("new logged status", logged);
-  // }, [logged]);
 
   const onSubmit = (data) => {
     const user = data;
     const registeredUsers = JSON.parse(
       window.localStorage.getItem("usersArray")
     );
-    console.log("registeredUsers", registeredUsers);
 
     const foundUser = registeredUsers.filter(
       (registeredUser) => registeredUser.email === user.email
     );
-    console.log("foundUser", foundUser);
 
     if (foundUser.length === 0) {
+      toast.warning("Usuario no existe");
       console.log("Usuario no existe");
     } else if (foundUser.length === 1) {
       if (foundUser[0].password === user.password) {
-        console.log("Email and password correcto. Estas logeado");
+        console.log("Email y password correcto. Estas logeado");
         setLogged(true);
-        history.push("/StarshipsPage");
+
+        history.push("/Starships");
       } else if (foundUser[0].password !== user.password) {
+        toast.error("La contraseña es incorrecta");
         console.log("La contraseña es incorrecta");
       }
     }
@@ -73,6 +72,7 @@ const LogIn = ({}) => {
             Create an Account
           </Link>
         </div>
+        <ToastContainer />
       </form>
     </Register>
   );

@@ -6,7 +6,7 @@ const Homepage = () => {
       <h1>May the force be with you</h1>
       <div className={styles.button_center}>
         <button className={styles.button}>
-          <Link to="/StarshipsPage" className={styles.link}>
+          <Link to="/LogIn" className={styles.link}>
             Enter
           </Link>
         </button>

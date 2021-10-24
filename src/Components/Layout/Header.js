@@ -23,16 +23,19 @@ const Header = () => {
       <div className={styles.prueba}>
         {!logged ? (
           <>
-            <button onClick={() => setLogged(true)}>Fast login</button>
-            <Link to="/LogIn">
-              <button className={styles.button}>LOG IN</button>
+            <Link to="/LogIn" className={styles.link}>
+              LOG IN
             </Link>
-            <Link to="/SignUp">
-              <button className={styles.button}>SIGN UP</button>
+            <Link to="/SignUp" className={styles.link}>
+              SIGN UP
             </Link>
           </>
         ) : (
-          <Link to="/" onClick={() => setLogged(false)}>
+          <Link
+            to="/"
+            className={styles.button}
+            onClick={() => setLogged(false)}
+          >
             LOG OUT
           </Link>
         )}

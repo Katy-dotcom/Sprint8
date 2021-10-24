@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PilotInfo from "../Pages/PilotInfo";
 import { Link } from "react-router-dom";
 import PilotInfoCard from "./Starship/PilotInfoCard";
 
@@ -30,11 +29,11 @@ const Pilots = ({ starshipPilotUrls }) => {
   };
 
   return (
-    <p>
+    <div>
       Pilotos:
       {pilots.length > 0 ? (
         pilots.map((pilot) => (
-          <Link to={`/Pilot/${pilot.id}`} key={pilot.id}>
+          <Link to={`/Actors/${pilot.id}`} key={pilot.id}>
             {/* <br />
             {` ${pilot.name} `} <br /> */}
             <PilotInfoCard pilot={pilot} />
@@ -43,7 +42,7 @@ const Pilots = ({ starshipPilotUrls }) => {
       ) : (
         <span>No hay pilotos registrados</span>
       )}
-    </p>
+    </div>
   );
 };
 

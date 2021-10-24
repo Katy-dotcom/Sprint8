@@ -26,9 +26,9 @@ const FilmInfo = () => {
         <h3>{film.title}</h3>
         <p style={{ color: "white" }}>{film.opening_crawl}</p>
         <section>
-          <p>Director: {film.director}</p>
-          <p>Producer: {film.producer}</p>
-          <p>Release date: {film.release_date}</p>
+          <div>Director: {film.director}</div>
+          <div>Producer: {film.producer}</div>
+          <div>Release date: {film.release_date}</div>
         </section>
       </div>
     </div>

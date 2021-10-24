@@ -23,3 +23,7 @@ h1 {
   color: gray;
   text-decoration: none;
 }
+
+.link:hover {
+  color: white;
+}

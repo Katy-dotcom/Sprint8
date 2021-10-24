@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-
 import { useForm } from "react-hook-form";
 import Register from "../StyledComponents/Register";
 import starwars_yellow from "../Assets/logo/starwars_yellow.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUp = () => {
   //declarar useForm
-  const [error, setError] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -21,16 +22,15 @@ const SignUp = () => {
     //descargar datos del array de usuarios del localStorage
     const usersArray =
       JSON.parse(window.localStorage.getItem("usersArray")) || [];
-    console.log("bajando el array de localStorage", usersArray);
 
     if (usersArray.some((user) => user.email === newUser.email)) {
       console.log("Este correo ya está registrado");
-      setError(true);
+      toast.error("Este correo ya está registrado");
     } else {
       usersArray.push(newUser);
       window.localStorage.setItem("usersArray", JSON.stringify(usersArray));
-
-      console.log("newUser ha sido añadido al array");
+      toast.success("You´ve been successfully registered.");
+      reset();
     }
   };
 
@@ -42,14 +42,22 @@ const SignUp = () => {
         <div>
           <label htmlFor="email">
             <input
-              {...register("email", { required: "This is required" })}
+              {...register("email", { required: "This field is required" })}
               name="email"
               id="email"
               type="text"
               placeholder="Username or Email Address"
             />
             {errors.email && (
-              <p style={{ border: "1px red solid" }}>{errors.email.message}</p>
+              <p
+                style={{
+                  color: "white",
+                  border: "1px red solid",
+                  padding: "10px",
+                }}
+              >
+                {errors.email.message}
+              </p>
             )}
           </label>
         </div>
@@ -58,15 +66,21 @@ const SignUp = () => {
             <input
               name="password"
               {...register("password", {
-                required: "This is required",
-                minLength: { value: 6, message: "too short" },
+                required: "This field is required",
+                minLength: { value: 6, message: "The password is too short" },
               })}
               type="password"
               placeholder="Password"
               id="password"
             />
             {errors.password && (
-              <p style={{ border: "1px red solid" }}>
+              <p
+                style={{
+                  color: "white",
+                  border: "1px red solid",
+                  padding: "10px",
+                }}
+              >
                 {errors.password.message}
               </p>
             )}
@@ -75,7 +89,7 @@ const SignUp = () => {
         <div>
           <button type="submit">Sign up</button>
         </div>
-        {error && <p>Ya existe una cuenta con ese usuario</p>}
+        <ToastContainer />
       </form>
     </Register>
   );
