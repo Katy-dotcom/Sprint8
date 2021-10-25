@@ -34,8 +34,6 @@ const Pilots = ({ starshipPilotUrls }) => {
       {pilots.length > 0 ? (
         pilots.map((pilot) => (
           <Link to={`/Actors/${pilot.id}`} key={pilot.id}>
-            {/* <br />
-            {` ${pilot.name} `} <br /> */}
             <PilotInfoCard pilot={pilot} />
           </Link>
         ))

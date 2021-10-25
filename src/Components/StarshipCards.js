@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import StarshipCard from "./Starship/StarshipCard";
 
 const StarshipCards = ({ starshipsUrls }) => {
@@ -27,7 +28,9 @@ const StarshipCards = ({ starshipsUrls }) => {
       Starships:
       {starshipCards.length > 0 ? (
         starshipCards.map((starship) => (
-          <StarshipCard starship={starship}></StarshipCard>
+          <Link to={`/Starships/${starship.id}`} key={starship.id}>
+            <StarshipCard starship={starship}></StarshipCard>
+          </Link>
         ))
       ) : (
         <span>No hay starships. </span>
